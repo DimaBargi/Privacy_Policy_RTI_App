@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות פרטיות - RADIATION THERAPY INFORMATION</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 1.5rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: #4a5568;
+            margin-bottom: 0.75rem;
+        }
+        .date {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        .toc {
+            background-color: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #edf2f7;
+        }
+        .toc h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .toc li {
+            margin-bottom: 0.6rem;
+        }
+        .toc a {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+            display: block; /* Make the entire li clickable */
+            padding: 0.3rem 0;
+        }
+        .toc a:hover {
+            color: #2c5282;
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .section h2 .icon {
+            margin-left: 0.75rem; /* For right-to-left layout */
+            color: #3182ce;
+            font-size: 1.5rem; /* Adjust icon size if using font icons */
+        }
+        .section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .section p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        .section ul {
+            list-style: disc; /* Default disc list style */
+            padding-right: 1.5rem; /* Adjust for RTL */
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        .section strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .highlight {
+            background-color: #e6fffa; /* Light green for important info */
+            border-right: 4px solid #38b2ac; /* Green border for RTL */
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+        }
+        .highlight h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #2d3748;
+        }
+        .highlight ul {
+            list-style: none; /* No bullets for retention list */
+            padding: 0;
+        }
+        .highlight li {
+            margin-bottom: 0.4rem;
+        }
+
+        .info {
+            background-color: #ebf8ff; /* Light blue for info boxes */
+            border-right: 4px solid #4299e1; /* Blue border for RTL */
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+        }
+        .info h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #2d3748;
+        }
+        .info ul {
+            list-style: none; /* No bullets for info list */
+            padding: 0;
+        }
+        .info li {
+            margin-bottom: 0.4rem;
+        }
+
+        .warning {
+            background-color: #fffaf0; /* Light orange for warnings */
+            border-right: 4px solid #ed8936; /* Orange border for RTL */
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+        }
+        .warning h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #2d3748;
+        }
+        .warning ul {
+            list-style: none; /* No bullets for warning list */
+            padding: 0;
+        }
+        .warning li {
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-box {
+            background-color: #f7fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-top: 2.5rem;
+        }
+        .contact-box h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .contact-box p {
+            margin-bottom: 0.8rem;
+            color: #4a5568;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .contact-box a {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        .contact-box div ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            text-align: right; /* Ensure list items align right */
+        }
+        .contact-box div li {
+            margin-bottom: 0.6rem;
+            color: #4a5568;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+        .footer strong {
+            font-weight: 600;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>מדיניות פרטיות</h1>
+            <div class="subtitle">RADIATION THERAPY INFORMATION</div>
+            <div class="date">תאריך עדכון אחרון: ינואר 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="toc">
+                <h3>תוכן עניינים</h3>
+                <ul>
+                    <li><a href="#intro">1. מבוא</a></li>
+                    <li><a href="#info-collection">2. מידע שאנו אוספים</a></li>
+                    <li><a href="#info-usage">3. כיצד אנו משתמשים במידע</a></li>
+                    <li><a href="#security">4. אחסון ואבטחת מידע</a></li>
+                    <li><a href="#sharing">5. שיתוף מידע עם צדדים שלישיים</a></li>
+                    <li><a href="#rights">6. הזכויות שלכם</a></li>
+                    <li><a href="#minors">7. הגנה על פרטיות קטינים</a></li>
+                    <li><a href="#changes">8. שינויים במדיניות הפרטיות</a></li>
+                    <li><a href="#international">9. העברת מידע בינלאומית</a></li>
+                    <li><a href="#contact">10. יצירת קשר ותלונות</a></li>
+                    <li><a href="#medical-security">אבטחת מידע רפואי</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="intro">
+                <h2><span class="icon"></span>מבוא</h2>
+                <p>ברוכים הבאים לאפליקציית "RADIATION THERAPY INFORMATION" (להלן: "האפליקציה"). אנו מחויבים להגנה על פרטיותכם ולשקיפות בנוגע לאופן שבו אנו אוספים, משתמשים ומגנים על המידע שלכם.</p>
+                <p>מדיניות פרטיות זו מסבירה כיצד אנו מטפלים במידע האישי שלכם בעת השימוש באפליקציה שלנו, המיועדת לסיוע בהכנה לטיפולי הקרנות ותרגול טכניקות נשימה.</p>
+                <div class="highlight">
+                    <h4>חשוב לדעת:</h4>
+                    <p>האפליקציה שלנו מתמחה בהכנה לטיפולי הקרנות ואינה אוספת מידע רפואי רגיש או מזהה אישי.</p>
+                </div>
+            </div>
+
+            <div class="section" id="info-collection">
+                <h2><span class="icon"></span>מידע שאנו אוספים</h2>
+                <h3>מידע שאתם מספקים ישירות:</h3>
+                <ul>
+                    <li><strong>העדפות שפה:</strong> השפה שבחרתם לשימוש באפליקציה</li>
+                    <li><strong>העדפות גופן:</strong> גודל הגופן שבחרתם</li>
+                    <li><strong>נתוני תרגול:</strong> תוצאות תרגילי נשימה ומשך זמן התרגול</li>
+                    <li><strong>יומן טיפולים:</strong> רשומות של נפח שתיה, זמני המתנה והערות אישיות</li>
+                    <li><strong>הגדרות אישיות:</strong> העדפות תצוגה ונגישות</li>
+                </ul>
+                <h3>מידע שנאסף אוטומטית:</h3>
+                <ul>
+                    <li><strong>מידע טכני:</strong> סוג מכשיר, מערכת הפעלה, גרסת האפליקציה</li>
+                    <li><strong>נתוני שימוש:</strong> תדירות השימוש, תכונות שנעשה בהן שימוש, זמני פעילות</li>
+                    <li><strong>נתוני ביצועים:</strong> זמני טעינה, שגיאות טכניות (ללא מידע אישי)</li>
+                </ul>
+                <div class="info">
+                    <h4>מידע שאיננו אוספים:</h4>
+                    <ul>
+                        <li>מידע רפואי רגיש (אבחנות, תוצאות בדיקות)</li>
+                        <li>מידע זיהוי אישי (שם, כתובת, מספר זהות)</li>
+                        <li>מידע פיננסי (פרטי כרטיס אשראי)</li>
+                        <li>מיקום גיאוגרפי</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="info-usage">
+                <h2><span class="icon"></span>כיצד אנו משתמשים במידע</h2>
+                <h3>מטרות השימוש:</h3>
+                <ul>
+                    <li><strong>שיפור חוויית המשתמש:</strong> התאמה אישית של האפליקציה להעדפותיכם</li>
+                    <li><strong>מעקב התקדמות:</strong> מתן אפשרות לעקוב אחר התקדמותכם בתרגילי הנשימה</li>
+                    <li><strong>שיפור האפליקציה:</strong> ניתוח נתוני שימוש לשיפור תכונות וביצועים</li>
+                    <li><strong>תמיכה טכנית:</strong> פתרון בעיות טכניות ומתן תמיכה למשתמשים</li>
+                    <li><strong>מחקר ופיתוח:</strong> שיפור טכניקות הנשימה והכנה לטיפולי הקרנות</li>
+                </ul>
+                <h3>בסיס חוקי לעיבוד:</h3>
+                <ul>
+                    <li><strong>הסכמה:</strong> הסכמתכם המפורשת לשימוש באפליקציה</li>
+                    <li><strong>אינטרס לגיטימי:</strong> שיפור השירות ומתן תמיכה טכנית</li>
+                    <li><strong>ביצוע חוזה:</strong> מתן השירותים המבוקשים</li>
+                </ul>
+            </div>
+
+            <div class="section" id="security">
+                <h2><span class="icon"></span>אחסון ואבטחת מידע</h2>
+                <h3>מיקום אחסון:</h3>
+                <ul>
+                    <li><strong>אחסון מקומי:</strong> רוב הנתונים נשמרים במכשיר שלכם בלבד</li>
+                    <li><strong>אחסון בענן:</strong> נתונים מסוימים עשויים להישמר בשרתים מאובטחים</li>
+                    <li><strong>גיבוי:</strong> נתונים חשובים מגובים באופן מוצפן</li>
+                </ul>
+                <h3>אמצעי אבטחה:</h3>
+                <ul>
+                    <li><strong>הצפנה:</strong> כל הנתונים הרגישים מוצפנים בהעברה ובאחסון</li>
+                    <li><strong>בקרת גישה:</strong> גישה מוגבלת למידע רק לצוות מורשה</li>
+                    <li><strong>ניטור אבטחה:</strong> מעקב מתמיד אחר איומי אבטחה</li>
+                    <li><strong>עדכוני אבטחה:</strong> עדכון שוטף של מערכות האבטחה</li>
+                </ul>
+                <div class="highlight">
+                    <h4>תקופת שמירה:</h4>
+                    <ul>
+                        <li>נתוני תרגול: נשמרים כל עוד האפליקציה מותקנת</li>
+                        <li>העדפות משתמש: נשמרות עד למחיקת האפליקציה</li>
+                        <li>נתונים טכניים: נשמרים עד 24 חודשים לצורכי שיפור השירות</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="sharing">
+                <h2><span class="icon"></span>שיתוף מידע עם צדדים שלישיים</h2>
+                <div class="warning">
+                    <h4>אנו לא משתפים מידע אישי עם:</h4>
+                    <ul>
+                        <li>חברות פרסום או שיווק</li>
+                        <li>מתווכי מידע (data brokers)</li>
+                        <li>רשתות חברתיות</li>
+                        <li>חברות ביטוח או גופים פיננסיים</li>
+                    </ul>
+                </div>
+                <h3>שיתוף מוגבל במקרים הבאים:</h3>
+                <ul>
+                    <li><strong>ספקי שירות טכניים:</strong> לצורך תחזוקה ושיפור האפליקציה (תחת הסכמי סודיות)</li>
+                    <li><strong>חובה חוקית:</strong> במקרה של דרישה חוקית מרשויות מוסמכות</li>
+                    <li><strong>הגנה על זכויות:</strong> למניעת נזק או הגנה על זכויות חוקיות</li>
+                </ul>
+                <h3>מידע אנונימי:</h3>
+                <ul>
+                    <li>נתונים סטטיסטיים כלליים (ללא זיהוי אישי) עשויים לשמש למחקר רפואי</li>
+                    <li>שיתוף עם מוסדות רפואיים לשיפור טכניקות טיפול (באישורכם)</li>
+                </ul>
+            </div>
+
+            <div class="section" id="rights">
+                <h2><span class="icon"></span>הזכויות שלכם</h2>
+                <div class="info">
+                    <h3>זכויותיכם כוללות:</h3>
+                    <ul>
+                        <li><strong>זכות עיון:</strong> צפייה בכל המידע האישי השמור עליכם</li>
+                        <li><strong>זכות תיקון:</strong> עדכון או תיקון מידע שגוי או לא מעודכן</li>
+                        <li><strong>זכות מחיקה:</strong> מחיקת כל הנתונים האישיים שלכם</li>
+                        <li><strong>זכות הגבלת עיבוד:</strong> הגבלת השימוש בנתונים למטרות ספציפיות</li>
+                        <li><strong>זכות ניידות:</strong> העברת הנתונים לאפליקציה אחרת</li>
+                        <li><strong>זכות התנגדות:</strong> התנגדות לעיבוד נתונים למטרות שיווק</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="minors">
+                <h2><span class="icon"></span>הגנה על פרטיות קטינים</h2>
+                <ul>
+                    <li>האפליקציה מיועדת למבוגרים בלבד (מעל גיל 18)</li>
+                    <li>איננו אוספים מידע ממשתמשים מתחת לגיל 18 ביודעין</li>
+                    <li>במקרה של גילוי מידע של קטין, נמחק אותו מיידית</li>
+                </ul>
+            </div>
+
+            <div class="section" id="changes">
+                <h2><span class="icon"></span>שינויים במדיניות הפרטיות</h2>
+                <h3>הודעה על שינויים:</h3>
+                <ul>
+                    <li>הודעה מוקדמת של 30 יום לפני שינויים מהותיים</li>
+                    <li>הודעה באפליקציה ובאימייל (אם סופק)</li>
+                    <li>אפשרות לסקור את השינויים לפני כניסתם לתוקף</li>
+                </ul>
+            </div>
+
+            <div class="section" id="international">
+                <h2><span class="icon"></span>העברת מידע בינלאומית</h2>
+                <ul>
+                    <li>המידע עשוי להישמר בשרתים במדינות שונות</li>
+                    <li>כל העברה מתבצעת בהתאם לתקנות הגנת הפרטיות הבינלאומיות</li>
+                    <li>הבטחת רמת הגנה שווה או גבוהה יותר במדינת היעד</li>
+                </ul>
+            </div>
+
+            <div class="contact-box" id="contact">
+                <h3>יצירת קשר ותלונות</h3>
+                <p><strong>אימייל:</strong> <a href="mailto:d.bragilovski@gmail.com">d.bragilovski@gmail.com</a></p>
+                <p><strong>נושא:</strong> "פרטיות - RADIATION THERAPY INFORMATION"</p>
+                <p><strong>זמן תגובה:</strong> עד 72 שעות</p>
+
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0, 0, 0, 0.1);">
+                    <h4>הגשת תלונות:</h4>
+                    <ul>
+                        <li>תלונות לרשות הגנת הפרטיות הישראלית</li>
+                        <li>במקרה של תושבי האיחוד האירופי (EU): תלונות לרגולטורים אירופיים</li>
+                        <li>פנייה לבית משפט בהתאם לחוק</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" id="medical-security">
+                <h2><span class="icon"></span>אבטחת מידע רפואי</h2>
+                <h3>תקנות רפואיות:</h3>
+                <ul>
+                    <li>עמידה בתקנות HIPAA (ארה"ב) במידת הרלוונטיות</li>
+                    <li>התאמה לתקנות הגנת הפרטיות הישראליות</li>
+                    <li>עמידה בתקני אבטחה רפואיים בינלאומיים</li>
+                </ul>
+                <div class="warning">
+                    <h4>הגבלות שימוש:</h4>
+                    <ul>
+                        <li>המידע באפליקציה אינו מהווה ייעוץ רפואי</li>
+                        <li>יש להתייעץ עם צוות רפואי מקצועי</li>
+                        <li>האפליקציה משמשת כעזר בלבד</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>הערה חשובה:</strong> מדיניות פרטיות זו כתובה בשפה פשוטה ונגישה.</p>
+            <p>במקרה של סתירה בין גרסאות שפה שונות, הגרסה העברית תהיה קובעת.</p>
+            <p><strong>תאריך עדכון אחרון:</strong> ינואר 2025 | <strong>גרסה:</strong> 1.0</p>
+            <p>לשאלות נוספות או הבהרות, אנא פנו אלינו בכתובת: <a href="mailto:d.bragilovski@gmail.com">d.bragilovski@gmail.com</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
